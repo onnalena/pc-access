@@ -34,6 +34,11 @@ public class LoginService {
             return false;
         }
 
+        if (!accessTokenOpt.get().getStatus().equals("UPCOMING")) {
+            TriggerAlert.alert(event, "Invalid Booking", "Booking is " + accessTokenOpt.get().getStatus().toLowerCase());
+            return false;
+        }
+
         Map compParams = new HashMap<>();
         compParams.put(accessTokenOpt.get().getComputer_id(), Long.class);
         compParams.put(InetAddress.getLocalHost().getHostName(), String.class);

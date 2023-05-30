@@ -5,13 +5,19 @@ public class Booking {
     private String idnumber;
     private String access_token;
     private Long computer_id;
+    private String status;
 
     public String getIdnumber() {
         return idnumber;
     }
-
     public void setIdnumber(String idnumber) {
         this.idnumber = idnumber;
+    }
+    public String getStatus() {
+        return idnumber;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getAccess_token() {
